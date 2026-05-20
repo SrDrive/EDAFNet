@@ -7,6 +7,7 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+(Python 3.8)
 
 ## Getting the data
 
