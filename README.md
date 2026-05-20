@@ -154,19 +154,31 @@ $ python test.py
 ## Results
 Pretrained models can be find in the `./pretrain_model` folder.
 
-<!-- ## Citation
-If you find our work useful, please cite it as
+## Evaluation
+
+Metrics used: **SSIM-m**, **SSIM-l**, and **HDR-VDP2**.
+
+> Evaluation script adapted from [SAFNet](https://github.com/ltkong218/SAFNet).
+
+1. Get predicted HDR images by running:
+```bash
+$ python eval_SAFNet_challenge123.py
 ```
-@article{ni2025ssiu,
-  title={Structural Similarity-Inspired Unfolding for Lightweight Image Super-Resolution},
-	author={Ni, Zhangkai, and Zhang, Yang, and Yang, Wenhan, and Wang, Hanli, and Wang, Shiqi and Kwong, Sam},
-	journal={IEEE Transactions on Image Processing},
-	volume={},
-	pages={},
-	year={2025},
-	publisher={IEEE}
-}
-``` -->
+Output will be saved in `./img_hdr_pred_challenge123`.
+
+2. Put and rename the ground truth HDR test images into:
+```
+./matlab_evaluation/img_hdr_gt_challenge123/
+```
+as `001.hdr, 002.hdr, ...`
+
+3. Download [hdrvdp-2.2.2](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/2.2.2/hdrvdp-2.2.2.zip/download) and place the unzipped folder into `./matlab_evaluation/hdrvdp-2.2.2`.
+
+4. Run the MATLAB evaluation script:
+```matlab
+./matlab_evaluation/eval_challenge123.m
+```
+
 
 
 ## Acknowledgments
